@@ -7,19 +7,17 @@ class BscLoginPage extends Page {
     /**
      * define selectors using getter methods
      */
-    get inputUsername() { return $('#username') }
-    get inputPassword() { return $('#password') }
-    get btnLogin() { return $('#loginAccountButton > a') }
-
+    get btnLogin() { return $('#loginSubmit') }
+    get inputUsername() { return $('#usernamelogin') }
+    get inputPassword() { return $('#passwordlogin') }
     /**
      * a method to encapsule automation code to interact with the page
      * e.g. to login using username and password
      */
     login(username, password) {
+        this.inputUsername.setValue(username);
+        this.inputPassword.setValue(password);
         this.btnLogin.click();
-        // this.inputUsername.setValue(username);
-        // this.inputPassword.setValue(password);
-        // this.btnSubmit.click();
     }
 
     /**
